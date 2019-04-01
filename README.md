@@ -1,9 +1,13 @@
 # swm050 device crate
 
-Currently using the unpatched original svd file "swm050". This is under 
-a proprietary library. As the resulting crate is only
+This uses the original "SWM050.svd" file with a few patches applied.
+
+The original svd file is formatted using `xml_pp`.
+
+The original file has a proprietary license. As the resulting crate is only
 using the information from the svd file, I believe it to not fall under this
 license (but this is not legal advice, I'm not in any way, shape or form a lawyer).
+
 
 ## License
 

@@ -195,18 +195,16 @@ pub struct TMRSE1 {
 unsafe impl Send for TMRSE1 {}
 impl TMRSE1 {
     #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const tmrse1::RegisterBlock {
+    pub fn ptr() -> *const tmrse0::RegisterBlock {
         1073751040 as *const _
     }
 }
 impl Deref for TMRSE1 {
-    type Target = tmrse1::RegisterBlock;
-    fn deref(&self) -> &tmrse1::RegisterBlock {
+    type Target = tmrse0::RegisterBlock;
+    fn deref(&self) -> &tmrse0::RegisterBlock {
         unsafe { &*TMRSE1::ptr() }
     }
 }
-#[doc = "Registers group"]
-pub mod tmrse1;
 #[allow(renamed_and_removed_lints)]
 #[allow(private_no_mangle_statics)]
 #[no_mangle]
