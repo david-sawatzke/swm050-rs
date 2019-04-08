@@ -488,7 +488,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - 0 \u{4e0a}\u{62c9}\u{5173}\u{95ed} 1 \u{4e0a}\u{62c9}\u{5f00}\u{542f}"]
+    #[doc = "Bit 0 - 0 pull up closed 1 pull up open"]
     #[inline]
     pub fn pa00(&self) -> PA00R {
         let bits = {
@@ -601,7 +601,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - 0 \u{4e0a}\u{62c9}\u{5173}\u{95ed} 1 \u{4e0a}\u{62c9}\u{5f00}\u{542f}"]
+    #[doc = "Bit 0 - 0 pull up closed 1 pull up open"]
     #[inline]
     pub fn pa00(&mut self) -> _PA00W {
         _PA00W { w: self }

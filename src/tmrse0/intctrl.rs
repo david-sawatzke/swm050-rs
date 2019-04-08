@@ -136,7 +136,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - 1 \u{4f7f}\u{80fd} to observe sate, you should set this bit 1"]
+    #[doc = "Bit 0 - 1 Enable to observe sate, you should set this bit 1"]
     #[inline]
     pub fn ena(&self) -> ENAR {
         let bits = {
@@ -146,7 +146,7 @@ impl R {
         };
         ENAR { bits }
     }
-    #[doc = "Bit 1 - 0 \u{5c4f}\u{853d}"]
+    #[doc = "Bit 1 - 0 shield"]
     #[inline]
     pub fn maskn(&self) -> MASKNR {
         let bits = {
@@ -169,12 +169,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - 1 \u{4f7f}\u{80fd} to observe sate, you should set this bit 1"]
+    #[doc = "Bit 0 - 1 Enable to observe sate, you should set this bit 1"]
     #[inline]
     pub fn ena(&mut self) -> _ENAW {
         _ENAW { w: self }
     }
-    #[doc = "Bit 1 - 0 \u{5c4f}\u{853d}"]
+    #[doc = "Bit 1 - 0 shield"]
     #[inline]
     pub fn maskn(&mut self) -> _MASKNW {
         _MASKNW { w: self }

@@ -92,7 +92,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - 0 A1/A2\u{529f}\u{80fd}\u{7531}PORT_SEL\u{51b3}\u{5b9a} 1 A1/A2\u{8fde}\u{63a5}\u{5230}SWD\u{529f}\u{80fd}\u{ff0c}\u{5206}\u{522b}\u{4e3a}SWDIO/SWCLK\u{529f}\u{80fd}"]
+    #[doc = "Bit 0 - 0 A1/A2 function determined by PORT_SEL 1 A1/A2 connected to SWD function, respectively SWDIO/SWCLK function"]
     #[inline]
     pub fn en(&self) -> ENR {
         let bits = {
@@ -115,7 +115,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - 0 A1/A2\u{529f}\u{80fd}\u{7531}PORT_SEL\u{51b3}\u{5b9a} 1 A1/A2\u{8fde}\u{63a5}\u{5230}SWD\u{529f}\u{80fd}\u{ff0c}\u{5206}\u{522b}\u{4e3a}SWDIO/SWCLK\u{529f}\u{80fd}"]
+    #[doc = "Bit 0 - 0 A1/A2 function determined by PORT_SEL 1 A1/A2 connected to SWD function, respectively SWDIO/SWCLK function"]
     #[inline]
     pub fn en(&mut self) -> _ENW {
         _ENW { w: self }

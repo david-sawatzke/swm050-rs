@@ -320,7 +320,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - \u{6a21}\u{5757}\u{4f7f}\u{80fd}"]
+    #[doc = "Bit 0 - Enable Timer"]
     #[inline]
     pub fn ena(&self) -> ENAR {
         let bits = {
@@ -330,7 +330,7 @@ impl R {
         };
         ENAR { bits }
     }
-    #[doc = "Bits 4:5 - 00 \u{5b9a}\u{65f6}\u{5668}/\u{8ba1}\u{6570}\u{5668}\u{6a21}\u{5f0f} 01 PWM\u{6a21}\u{5f0f} 10 \u{8109}\u{5bbd}\u{6355}\u{6349}\u{6a21}\u{5f0f} 11 \u{5360}\u{7a7a}\u{6bd4}\u{6355}\u{6349}\u{6a21}\u{5f0f}"]
+    #[doc = "Bits 4:5 - 00 Timer/Counter Mode 01 PWM Mode 10 Pulse Width Capture Mode 11 Duty Cycle Capture Mode"]
     #[inline]
     pub fn wmod(&self) -> WMODR {
         let bits = {
@@ -340,7 +340,7 @@ impl R {
         };
         WMODR { bits }
     }
-    #[doc = "Bit 8 - 0 \u{5185}\u{90e8} 1 \u{5916}\u{90e8}"]
+    #[doc = "Bit 8 - 0 Internal 1 External"]
     #[inline]
     pub fn oscmod(&self) -> OSCMODR {
         let bits = {
@@ -350,7 +350,7 @@ impl R {
         };
         OSCMODR { bits }
     }
-    #[doc = "Bits 12:13 - 00 \u{65e0}\u{8f93}\u{51fa} 01 \u{53d6}\u{53cd} 10 \u{7f6e}\u{9ad8} 11 \u{7f6e}\u{4f4e}"]
+    #[doc = "Bits 12:13 - 00 No output 01 Invert 10 Set high 11 Set low"]
     #[inline]
     pub fn outmod(&self) -> OUTMODR {
         let bits = {
@@ -360,7 +360,7 @@ impl R {
         };
         OUTMODR { bits }
     }
-    #[doc = "Bit 16 - 0 \u{4e0a}\u{5347}\u{6cbf} 1 \u{4e0b}\u{964d}\u{6cbf}"]
+    #[doc = "Bit 16 - 0 Rising edge 1 Falling edge"]
     #[inline]
     pub fn edge_f(&self) -> EDGE_FR {
         let bits = {
@@ -370,7 +370,7 @@ impl R {
         };
         EDGE_FR { bits }
     }
-    #[doc = "Bit 24 - \u{4fdd}\u{7559}\u{8ba1}\u{6570}\u{503c}"]
+    #[doc = "Bit 24 - Keep count value"]
     #[inline]
     pub fn valsave(&self) -> VALSAVER {
         let bits = {
@@ -380,7 +380,7 @@ impl R {
         };
         VALSAVER { bits }
     }
-    #[doc = "Bit 28 - 1 \u{5355}\u{6b21}\u{6a21}\u{5f0f} 0 \u{5faa}\u{73af}\u{6a21}\u{5f0f}"]
+    #[doc = "Bit 28 - 1 single mode 0 circular mode"]
     #[inline]
     pub fn single(&self) -> SINGLER {
         let bits = {
@@ -403,37 +403,37 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - \u{6a21}\u{5757}\u{4f7f}\u{80fd}"]
+    #[doc = "Bit 0 - Enable Timer"]
     #[inline]
     pub fn ena(&mut self) -> _ENAW {
         _ENAW { w: self }
     }
-    #[doc = "Bits 4:5 - 00 \u{5b9a}\u{65f6}\u{5668}/\u{8ba1}\u{6570}\u{5668}\u{6a21}\u{5f0f} 01 PWM\u{6a21}\u{5f0f} 10 \u{8109}\u{5bbd}\u{6355}\u{6349}\u{6a21}\u{5f0f} 11 \u{5360}\u{7a7a}\u{6bd4}\u{6355}\u{6349}\u{6a21}\u{5f0f}"]
+    #[doc = "Bits 4:5 - 00 Timer/Counter Mode 01 PWM Mode 10 Pulse Width Capture Mode 11 Duty Cycle Capture Mode"]
     #[inline]
     pub fn wmod(&mut self) -> _WMODW {
         _WMODW { w: self }
     }
-    #[doc = "Bit 8 - 0 \u{5185}\u{90e8} 1 \u{5916}\u{90e8}"]
+    #[doc = "Bit 8 - 0 Internal 1 External"]
     #[inline]
     pub fn oscmod(&mut self) -> _OSCMODW {
         _OSCMODW { w: self }
     }
-    #[doc = "Bits 12:13 - 00 \u{65e0}\u{8f93}\u{51fa} 01 \u{53d6}\u{53cd} 10 \u{7f6e}\u{9ad8} 11 \u{7f6e}\u{4f4e}"]
+    #[doc = "Bits 12:13 - 00 No output 01 Invert 10 Set high 11 Set low"]
     #[inline]
     pub fn outmod(&mut self) -> _OUTMODW {
         _OUTMODW { w: self }
     }
-    #[doc = "Bit 16 - 0 \u{4e0a}\u{5347}\u{6cbf} 1 \u{4e0b}\u{964d}\u{6cbf}"]
+    #[doc = "Bit 16 - 0 Rising edge 1 Falling edge"]
     #[inline]
     pub fn edge_f(&mut self) -> _EDGE_FW {
         _EDGE_FW { w: self }
     }
-    #[doc = "Bit 24 - \u{4fdd}\u{7559}\u{8ba1}\u{6570}\u{503c}"]
+    #[doc = "Bit 24 - Keep count value"]
     #[inline]
     pub fn valsave(&mut self) -> _VALSAVEW {
         _VALSAVEW { w: self }
     }
-    #[doc = "Bit 28 - 1 \u{5355}\u{6b21}\u{6a21}\u{5f0f} 0 \u{5faa}\u{73af}\u{6a21}\u{5f0f}"]
+    #[doc = "Bit 28 - 1 single mode 0 circular mode"]
     #[inline]
     pub fn single(&mut self) -> _SINGLEW {
         _SINGLEW { w: self }

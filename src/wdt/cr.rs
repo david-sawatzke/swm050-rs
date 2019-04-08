@@ -146,7 +146,7 @@ impl R {
         };
         ENR { bits }
     }
-    #[doc = "Bit 1 - 0 \u{8d85}\u{65f6}\u{5373}\u{590d}\u{4f4d} 1 \u{7b2c}\u{4e00}\u{6b21}\u{8d85}\u{65f6}\u{4ea7}\u{751f}\u{4e2d}\u{65ad}\u{ff0c}\u{82e5}\u{4ea7}\u{751f}\u{7b2c}\u{4e8c}\u{6b21}\u{8d85}\u{65f6}\u{65f6}\u{ff0c}\u{6ca1}\u{6709}\u{6e05}\u{9664}\u{4e2d}\u{65ad}\u{ff0c}\u{5219}\u{7cfb}\u{7edf}\u{590d}\u{4f4d}"]
+    #[doc = "Bit 1 - 0 Timeout is reset 1 The first time-out generates an interrupt. If a second time-out occurs, the interrupt is not cleared. The system resets."]
     #[inline]
     pub fn rmod(&self) -> RMODR {
         let bits = {
@@ -174,7 +174,7 @@ impl W {
     pub fn en(&mut self) -> _ENW {
         _ENW { w: self }
     }
-    #[doc = "Bit 1 - 0 \u{8d85}\u{65f6}\u{5373}\u{590d}\u{4f4d} 1 \u{7b2c}\u{4e00}\u{6b21}\u{8d85}\u{65f6}\u{4ea7}\u{751f}\u{4e2d}\u{65ad}\u{ff0c}\u{82e5}\u{4ea7}\u{751f}\u{7b2c}\u{4e8c}\u{6b21}\u{8d85}\u{65f6}\u{65f6}\u{ff0c}\u{6ca1}\u{6709}\u{6e05}\u{9664}\u{4e2d}\u{65ad}\u{ff0c}\u{5219}\u{7cfb}\u{7edf}\u{590d}\u{4f4d}"]
+    #[doc = "Bit 1 - 0 Timeout is reset 1 The first time-out generates an interrupt. If a second time-out occurs, the interrupt is not cleared. The system resets."]
     #[inline]
     pub fn rmod(&mut self) -> _RMODW {
         _RMODW { w: self }

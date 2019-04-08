@@ -100,7 +100,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:9 - =0\u{ff1a}2\u{5206}\u{9891} =\u{5947}\u{6570}\u{ff1a}\u{4e0d}\u{5206}\u{9891} =\u{5076}\u{6570} \u{5206}\u{9891}"]
+    #[doc = "Bits 0:9 - =0:2 Divide = Odd: Undivided = Even Divided, directliy divides the clock source, independent of the core clock"]
     #[inline]
     pub fn core_clk_div(&self) -> CORE_CLK_DIVR {
         let bits = {
@@ -110,7 +110,7 @@ impl R {
         };
         CORE_CLK_DIVR { bits }
     }
-    #[doc = "Bits 16:21 - =0\u{ff1a}2\u{5206}\u{9891} =\u{5947}\u{6570}\u{ff1a}\u{4e0d}\u{5206}\u{9891} =\u{5076}\u{6570} \u{5206}\u{9891}\u{ff0c}\u{76f4}\u{63a5}\u{5bf9}\u{65f6}\u{949f}\u{6e90}\u{5206}\u{9891}\u{ff0c}\u{4e0d}\u{4f9d}\u{8d56}\u{4e8e}\u{5185}\u{6838}\u{65f6}\u{949f}"]
+    #[doc = "Bits 16:21 - =0:2 Divide = Odd: Divide = Even Divided"]
     #[inline]
     pub fn tmrse_clk_div(&self) -> TMRSE_CLK_DIVR {
         let bits = {
@@ -133,12 +133,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:9 - =0\u{ff1a}2\u{5206}\u{9891} =\u{5947}\u{6570}\u{ff1a}\u{4e0d}\u{5206}\u{9891} =\u{5076}\u{6570} \u{5206}\u{9891}"]
+    #[doc = "Bits 0:9 - =0:2 Divide = Odd: Undivided = Even Divided, directliy divides the clock source, independent of the core clock"]
     #[inline]
     pub fn core_clk_div(&mut self) -> _CORE_CLK_DIVW {
         _CORE_CLK_DIVW { w: self }
     }
-    #[doc = "Bits 16:21 - =0\u{ff1a}2\u{5206}\u{9891} =\u{5947}\u{6570}\u{ff1a}\u{4e0d}\u{5206}\u{9891} =\u{5076}\u{6570} \u{5206}\u{9891}\u{ff0c}\u{76f4}\u{63a5}\u{5bf9}\u{65f6}\u{949f}\u{6e90}\u{5206}\u{9891}\u{ff0c}\u{4e0d}\u{4f9d}\u{8d56}\u{4e8e}\u{5185}\u{6838}\u{65f6}\u{949f}"]
+    #[doc = "Bits 16:21 - =0:2 Divide = Odd: Divide = Even Divided"]
     #[inline]
     pub fn tmrse_clk_div(&mut self) -> _TMRSE_CLK_DIVW {
         _TMRSE_CLK_DIVW { w: self }

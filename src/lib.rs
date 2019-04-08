@@ -94,25 +94,6 @@ impl Deref for GPIOA {
 #[doc = "Registers group"]
 pub mod gpioa;
 #[doc = "Registers group"]
-pub struct GPIO_EXTA {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for GPIO_EXTA {}
-impl GPIO_EXTA {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const gpio_exta::RegisterBlock {
-        1073746000 as *const _
-    }
-}
-impl Deref for GPIO_EXTA {
-    type Target = gpio_exta::RegisterBlock;
-    fn deref(&self) -> &gpio_exta::RegisterBlock {
-        unsafe { &*GPIO_EXTA::ptr() }
-    }
-}
-#[doc = "Registers group"]
-pub mod gpio_exta;
-#[doc = "Registers group"]
 pub struct ACMP {
     _marker: PhantomData<*const ()>,
 }
@@ -131,25 +112,6 @@ impl Deref for ACMP {
 }
 #[doc = "Registers group"]
 pub mod acmp;
-#[doc = "Registers group"]
-pub struct EXTIA {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for EXTIA {}
-impl EXTIA {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const extia::RegisterBlock {
-        1073745968 as *const _
-    }
-}
-impl Deref for EXTIA {
-    type Target = extia::RegisterBlock;
-    fn deref(&self) -> &extia::RegisterBlock {
-        unsafe { &*EXTIA::ptr() }
-    }
-}
-#[doc = "Registers group"]
-pub mod extia;
 #[doc = "Registers group"]
 pub struct WDT {
     _marker: PhantomData<*const ()>,
@@ -218,12 +180,8 @@ pub struct Peripherals {
     pub PORT: PORT,
     #[doc = "GPIOA"]
     pub GPIOA: GPIOA,
-    #[doc = "GPIO_EXTA"]
-    pub GPIO_EXTA: GPIO_EXTA,
     #[doc = "ACMP"]
     pub ACMP: ACMP,
-    #[doc = "EXTIA"]
-    pub EXTIA: EXTIA,
     #[doc = "WDT"]
     pub WDT: WDT,
     #[doc = "TMRSE0"]
@@ -257,13 +215,7 @@ impl Peripherals {
             GPIOA: GPIOA {
                 _marker: PhantomData,
             },
-            GPIO_EXTA: GPIO_EXTA {
-                _marker: PhantomData,
-            },
             ACMP: ACMP {
-                _marker: PhantomData,
-            },
-            EXTIA: EXTIA {
                 _marker: PhantomData,
             },
             WDT: WDT {

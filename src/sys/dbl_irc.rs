@@ -92,7 +92,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - 0 18MHz 1 36MHz"]
+    #[doc = "Bit 0 - 0:18MHz 1:36MHz"]
     #[inline]
     pub fn dbl_irc(&self) -> DBL_IRCR {
         let bits = {
@@ -115,7 +115,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - 0 18MHz 1 36MHz"]
+    #[doc = "Bit 0 - 0:18MHz 1:36MHz"]
     #[inline]
     pub fn dbl_irc(&mut self) -> _DBL_IRCW {
         _DBL_IRCW { w: self }

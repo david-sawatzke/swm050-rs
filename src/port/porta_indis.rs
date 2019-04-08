@@ -488,7 +488,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - 0 GPIOA.0\u{8f93}\u{5165}\u{529f}\u{80fd}\u{4e0d}\u{7981}\u{6b62} 1 GPIOA.0\u{8f93}\u{5165}\u{529f}\u{80fd}\u{7981}\u{6b62}\u{ff0c}\u{4ee5}\u{964d}\u{4f4e}\u{529f}\u{8017}"]
+    #[doc = "Bit 0 - 0 GPIOA.0 input function is not disabled 1 GPIOA.0 input function is disabled to reduce power consumption"]
     #[inline]
     pub fn pa00(&self) -> PA00R {
         let bits = {
@@ -601,7 +601,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - 0 GPIOA.0\u{8f93}\u{5165}\u{529f}\u{80fd}\u{4e0d}\u{7981}\u{6b62} 1 GPIOA.0\u{8f93}\u{5165}\u{529f}\u{80fd}\u{7981}\u{6b62}\u{ff0c}\u{4ee5}\u{964d}\u{4f4e}\u{529f}\u{8017}"]
+    #[doc = "Bit 0 - 0 GPIOA.0 input function is not disabled 1 GPIOA.0 input function is disabled to reduce power consumption"]
     #[inline]
     pub fn pa00(&mut self) -> _PA00W {
         _PA00W { w: self }

@@ -100,7 +100,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:3 - \u{521d}\u{59cb}\u{503c}\u{ff08}\u{5728}WDT\u{4f7f}\u{80fd}\u{4e4b}\u{524d}\u{5199}\u{5165}\u{503c}\u{ff09} 2^(8+TOP)\u{ff0c}\u{5373}24\u{4f4d}"]
+    #[doc = "Bits 0:3 - Initial value (write value before WDT enable) 2^(8+TOP), 24 bits"]
     #[inline]
     pub fn top(&self) -> TOPR {
         let bits = {
@@ -110,7 +110,7 @@ impl R {
         };
         TOPR { bits }
     }
-    #[doc = "Bits 4:7 - \u{8d85}\u{65f6}\u{540e}\u{5c06}\u{8981}\u{586b}\u{88c5}\u{7684}\u{503c}"]
+    #[doc = "Bits 4:7 - The value to be filled after timeout"]
     #[inline]
     pub fn top_init(&self) -> TOP_INITR {
         let bits = {
@@ -133,12 +133,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:3 - \u{521d}\u{59cb}\u{503c}\u{ff08}\u{5728}WDT\u{4f7f}\u{80fd}\u{4e4b}\u{524d}\u{5199}\u{5165}\u{503c}\u{ff09} 2^(8+TOP)\u{ff0c}\u{5373}24\u{4f4d}"]
+    #[doc = "Bits 0:3 - Initial value (write value before WDT enable) 2^(8+TOP), 24 bits"]
     #[inline]
     pub fn top(&mut self) -> _TOPW {
         _TOPW { w: self }
     }
-    #[doc = "Bits 4:7 - \u{8d85}\u{65f6}\u{540e}\u{5c06}\u{8981}\u{586b}\u{88c5}\u{7684}\u{503c}"]
+    #[doc = "Bits 4:7 - The value to be filled after timeout"]
     #[inline]
     pub fn top_init(&mut self) -> _TOP_INITW {
         _TOP_INITW { w: self }
