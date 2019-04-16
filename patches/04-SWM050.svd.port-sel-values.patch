@@ -1,0 +1,128 @@
+--- SWM050-patched.svd.orig	2019-04-16 10:50:20.861112170 +0200
++++ SWM050-patched.svd	2019-04-16 10:56:54.169473546 +0200
+@@ -164,73 +164,79 @@
+           <fields>
+             <field>
+               <name>PA00</name>
+-              <description>00 GPIO	   01 TMRSE0_IN	 	10/11 </description>
++              <description>GPIOA Pin 0</description>
+               <bitOffset>0</bitOffset>
+               <bitWidth>2</bitWidth>
+               <access>read-write</access>
++              <enumeratedValues>
++                <enumeratedValue>
++                  <name>GPIO</name>
++                  <description>GPIO function</description>
++                  <value>0</value>
++                </enumeratedValue>
++                <enumeratedValue>
++                  <name>TMRSE0_IN</name>
++                  <description>Timer SE0 input</description>
++                  <value>1</value>
++                </enumeratedValue>
++              </enumeratedValues>
+             </field>
+             <field>
+               <name>PA01</name>
+-              <description>00 GPIO	   01 TMRSE0_OUT	10/11 </description>
++              <description>GPIOA Pin 1</description>
+               <bitOffset>2</bitOffset>
+               <bitWidth>2</bitWidth>
+               <access>read-write</access>
++              <enumeratedValues>
++                <enumeratedValue>
++                  <name>GPIO</name>
++                  <description>GPIO function</description>
++                  <value>0</value>
++                </enumeratedValue>
++                <enumeratedValue>
++                  <name>TMRSE0_OUT</name>
++                  <description>Timer SE0 output</description>
++                  <value>1</value>
++                </enumeratedValue>
++              </enumeratedValues>
+             </field>
+             <field>
+               <name>PA02</name>
+-              <description>00 GPIO	   01 TMRSE1_IN	 	10/11 </description>
++              <description>GPIOA Pin 2</description>
+               <bitOffset>4</bitOffset>
+               <bitWidth>2</bitWidth>
+               <access>read-write</access>
+-            </field>
+-            <field>
+-              <name>PA03</name>
+-              <description>00 GPIO	   01 				10/11</description>
+-              <bitOffset>6</bitOffset>
+-              <bitWidth>2</bitWidth>
+-              <access>read-write</access>
+-            </field>
+-            <field>
+-              <name>PA04</name>
+-              <description>00 GPIO	   01 				10/11</description>
+-              <bitOffset>8</bitOffset>
+-              <bitWidth>2</bitWidth>
+-              <access>read-write</access>
+-            </field>
+-            <field>
+-              <name>PA05</name>
+-              <description>00 GPIO	   01 				10/11</description>
+-              <bitOffset>10</bitOffset>
+-              <bitWidth>2</bitWidth>
+-              <access>read-write</access>
+-            </field>
+-            <field>
+-              <name>PA06</name>
+-              <description>00 GPIO	   01	  			10/11</description>
+-              <bitOffset>12</bitOffset>
+-              <bitWidth>2</bitWidth>
+-              <access>read-write</access>
++              <enumeratedValues>
++                <enumeratedValue>
++                  <name>GPIO</name>
++                  <description>GPIO function</description>
++                  <value>0</value>
++                </enumeratedValue>
++                <enumeratedValue>
++                  <name>TMRSE1_IN</name>
++                  <description>Timer SE1 input</description>
++                  <value>1</value>
++                </enumeratedValue>
++              </enumeratedValues>
+             </field>
+             <field>
+               <name>PA07</name>
+-              <description>00 GPIO	   01 TMRSE1OUT	 	10/11</description>
++              <description>GPIOA Pin 7</description>
+               <bitOffset>14</bitOffset>
+               <bitWidth>2</bitWidth>
+               <access>read-write</access>
+-            </field>
+-            <field>
+-              <name>PA08</name>
+-              <description>00 GPIO	   01			   	10/11</description>
+-              <bitOffset>16</bitOffset>
+-              <bitWidth>2</bitWidth>
+-              <access>read-write</access>
+-            </field>
+-            <field>
+-              <name>PA09</name>
+-              <description>00 GPIO	   01			   	10/11</description>
+-              <bitOffset>18</bitOffset>
+-              <bitWidth>2</bitWidth>
+-              <access>read-write</access>
++              <enumeratedValues>
++                <enumeratedValue>
++                  <name>GPIO</name>
++                  <description>GPIO function</description>
++                  <value>0</value>
++                </enumeratedValue>
++                <enumeratedValue>
++                  <name>TMRSE1_OUT</name>
++                  <description>Timer SE1 output</description>
++                  <value>1</value>
++                </enumeratedValue>
++              </enumeratedValues>
+             </field>
+           </fields>
+         </register>

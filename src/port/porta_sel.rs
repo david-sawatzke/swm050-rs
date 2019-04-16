@@ -42,114 +42,186 @@ impl super::PORTA_SEL {
         self.write(|w| w)
     }
 }
-#[doc = r" Value of the field"]
-pub struct PA00R {
-    bits: u8,
+#[doc = "Possible values of the field `PA00`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PA00R {
+    #[doc = "GPIO function"]
+    GPIO,
+    #[doc = "Timer SE0 input"]
+    TMRSE0_IN,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PA00R {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            PA00R::GPIO => 0,
+            PA00R::TMRSE0_IN => 1,
+            PA00R::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> PA00R {
+        match value {
+            0 => PA00R::GPIO,
+            1 => PA00R::TMRSE0_IN,
+            i => PA00R::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline]
+    pub fn is_gpio(&self) -> bool {
+        *self == PA00R::GPIO
+    }
+    #[doc = "Checks if the value of the field is `TMRSE0_IN`"]
+    #[inline]
+    pub fn is_tmrse0_in(&self) -> bool {
+        *self == PA00R::TMRSE0_IN
     }
 }
-#[doc = r" Value of the field"]
-pub struct PA01R {
-    bits: u8,
+#[doc = "Possible values of the field `PA01`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PA01R {
+    #[doc = "GPIO function"]
+    GPIO,
+    #[doc = "Timer SE0 output"]
+    TMRSE0_OUT,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PA01R {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            PA01R::GPIO => 0,
+            PA01R::TMRSE0_OUT => 1,
+            PA01R::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> PA01R {
+        match value {
+            0 => PA01R::GPIO,
+            1 => PA01R::TMRSE0_OUT,
+            i => PA01R::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline]
+    pub fn is_gpio(&self) -> bool {
+        *self == PA01R::GPIO
+    }
+    #[doc = "Checks if the value of the field is `TMRSE0_OUT`"]
+    #[inline]
+    pub fn is_tmrse0_out(&self) -> bool {
+        *self == PA01R::TMRSE0_OUT
     }
 }
-#[doc = r" Value of the field"]
-pub struct PA02R {
-    bits: u8,
+#[doc = "Possible values of the field `PA02`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PA02R {
+    #[doc = "GPIO function"]
+    GPIO,
+    #[doc = "Timer SE1 input"]
+    TMRSE1_IN,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PA02R {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            PA02R::GPIO => 0,
+            PA02R::TMRSE1_IN => 1,
+            PA02R::_Reserved(bits) => bits,
+        }
     }
-}
-#[doc = r" Value of the field"]
-pub struct PA03R {
-    bits: u8,
-}
-impl PA03R {
-    #[doc = r" Value of the field as raw bits"]
+    #[allow(missing_docs)]
+    #[doc(hidden)]
     #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    pub fn _from(value: u8) -> PA02R {
+        match value {
+            0 => PA02R::GPIO,
+            1 => PA02R::TMRSE1_IN,
+            i => PA02R::_Reserved(i),
+        }
     }
-}
-#[doc = r" Value of the field"]
-pub struct PA04R {
-    bits: u8,
-}
-impl PA04R {
-    #[doc = r" Value of the field as raw bits"]
+    #[doc = "Checks if the value of the field is `GPIO`"]
     #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    pub fn is_gpio(&self) -> bool {
+        *self == PA02R::GPIO
     }
-}
-#[doc = r" Value of the field"]
-pub struct PA05R {
-    bits: u8,
-}
-impl PA05R {
-    #[doc = r" Value of the field as raw bits"]
+    #[doc = "Checks if the value of the field is `TMRSE1_IN`"]
     #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    pub fn is_tmrse1_in(&self) -> bool {
+        *self == PA02R::TMRSE1_IN
     }
 }
-#[doc = r" Value of the field"]
-pub struct PA06R {
-    bits: u8,
-}
-impl PA06R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PA07R {
-    bits: u8,
+#[doc = "Possible values of the field `PA07`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PA07R {
+    #[doc = "GPIO function"]
+    GPIO,
+    #[doc = "Timer SE1 output"]
+    TMRSE1_OUT,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl PA07R {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            PA07R::GPIO => 0,
+            PA07R::TMRSE1_OUT => 1,
+            PA07R::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> PA07R {
+        match value {
+            0 => PA07R::GPIO,
+            1 => PA07R::TMRSE1_OUT,
+            i => PA07R::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `GPIO`"]
+    #[inline]
+    pub fn is_gpio(&self) -> bool {
+        *self == PA07R::GPIO
+    }
+    #[doc = "Checks if the value of the field is `TMRSE1_OUT`"]
+    #[inline]
+    pub fn is_tmrse1_out(&self) -> bool {
+        *self == PA07R::TMRSE1_OUT
     }
 }
-#[doc = r" Value of the field"]
-pub struct PA08R {
-    bits: u8,
+#[doc = "Values that can be written to the field `PA00`"]
+pub enum PA00W {
+    #[doc = "GPIO function"]
+    GPIO,
+    #[doc = "Timer SE0 input"]
+    TMRSE0_IN,
 }
-impl PA08R {
-    #[doc = r" Value of the field as raw bits"]
+impl PA00W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
     #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PA09R {
-    bits: u8,
-}
-impl PA09R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            PA00W::GPIO => 0,
+            PA00W::TMRSE0_IN => 1,
+        }
     }
 }
 #[doc = r" Proxy"]
@@ -157,6 +229,21 @@ pub struct _PA00W<'a> {
     w: &'a mut W,
 }
 impl<'a> _PA00W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: PA00W) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "GPIO function"]
+    #[inline]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(PA00W::GPIO)
+    }
+    #[doc = "Timer SE0 input"]
+    #[inline]
+    pub fn tmrse0_in(self) -> &'a mut W {
+        self.variant(PA00W::TMRSE0_IN)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -167,11 +254,44 @@ impl<'a> _PA00W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `PA01`"]
+pub enum PA01W {
+    #[doc = "GPIO function"]
+    GPIO,
+    #[doc = "Timer SE0 output"]
+    TMRSE0_OUT,
+}
+impl PA01W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            PA01W::GPIO => 0,
+            PA01W::TMRSE0_OUT => 1,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _PA01W<'a> {
     w: &'a mut W,
 }
 impl<'a> _PA01W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: PA01W) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "GPIO function"]
+    #[inline]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(PA01W::GPIO)
+    }
+    #[doc = "Timer SE0 output"]
+    #[inline]
+    pub fn tmrse0_out(self) -> &'a mut W {
+        self.variant(PA01W::TMRSE0_OUT)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -182,11 +302,44 @@ impl<'a> _PA01W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `PA02`"]
+pub enum PA02W {
+    #[doc = "GPIO function"]
+    GPIO,
+    #[doc = "Timer SE1 input"]
+    TMRSE1_IN,
+}
+impl PA02W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            PA02W::GPIO => 0,
+            PA02W::TMRSE1_IN => 1,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _PA02W<'a> {
     w: &'a mut W,
 }
 impl<'a> _PA02W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: PA02W) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "GPIO function"]
+    #[inline]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(PA02W::GPIO)
+    }
+    #[doc = "Timer SE1 input"]
+    #[inline]
+    pub fn tmrse1_in(self) -> &'a mut W {
+        self.variant(PA02W::TMRSE1_IN)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -197,64 +350,22 @@ impl<'a> _PA02W<'a> {
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PA03W<'a> {
-    w: &'a mut W,
+#[doc = "Values that can be written to the field `PA07`"]
+pub enum PA07W {
+    #[doc = "GPIO function"]
+    GPIO,
+    #[doc = "Timer SE1 output"]
+    TMRSE1_OUT,
 }
-impl<'a> _PA03W<'a> {
-    #[doc = r" Writes raw bits to the field"]
+impl PA07W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PA04W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PA04W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PA05W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PA05W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PA06W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PA06W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            PA07W::GPIO => 0,
+            PA07W::TMRSE1_OUT => 1,
+        }
     }
 }
 #[doc = r" Proxy"]
@@ -262,41 +373,26 @@ pub struct _PA07W<'a> {
     w: &'a mut W,
 }
 impl<'a> _PA07W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: PA07W) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "GPIO function"]
+    #[inline]
+    pub fn gpio(self) -> &'a mut W {
+        self.variant(PA07W::GPIO)
+    }
+    #[doc = "Timer SE1 output"]
+    #[inline]
+    pub fn tmrse1_out(self) -> &'a mut W {
+        self.variant(PA07W::TMRSE1_OUT)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PA08W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PA08W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PA09W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PA09W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 18;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
         self.w
@@ -308,105 +404,41 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - 00 GPIO 01 TMRSE0_IN 10/11"]
+    #[doc = "Bits 0:1 - GPIOA Pin 0"]
     #[inline]
     pub fn pa00(&self) -> PA00R {
-        let bits = {
+        PA00R::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA00R { bits }
+        })
     }
-    #[doc = "Bits 2:3 - 00 GPIO 01 TMRSE0_OUT 10/11"]
+    #[doc = "Bits 2:3 - GPIOA Pin 1"]
     #[inline]
     pub fn pa01(&self) -> PA01R {
-        let bits = {
+        PA01R::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA01R { bits }
+        })
     }
-    #[doc = "Bits 4:5 - 00 GPIO 01 TMRSE1_IN 10/11"]
+    #[doc = "Bits 4:5 - GPIOA Pin 2"]
     #[inline]
     pub fn pa02(&self) -> PA02R {
-        let bits = {
+        PA02R::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 4;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA02R { bits }
+        })
     }
-    #[doc = "Bits 6:7 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa03(&self) -> PA03R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA03R { bits }
-    }
-    #[doc = "Bits 8:9 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa04(&self) -> PA04R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA04R { bits }
-    }
-    #[doc = "Bits 10:11 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa05(&self) -> PA05R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA05R { bits }
-    }
-    #[doc = "Bits 12:13 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa06(&self) -> PA06R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA06R { bits }
-    }
-    #[doc = "Bits 14:15 - 00 GPIO 01 TMRSE1OUT 10/11"]
+    #[doc = "Bits 14:15 - GPIOA Pin 7"]
     #[inline]
     pub fn pa07(&self) -> PA07R {
-        let bits = {
+        PA07R::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 14;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA07R { bits }
-    }
-    #[doc = "Bits 16:17 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa08(&self) -> PA08R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA08R { bits }
-    }
-    #[doc = "Bits 18:19 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa09(&self) -> PA09R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PA09R { bits }
+        })
     }
 }
 impl W {
@@ -421,54 +453,24 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - 00 GPIO 01 TMRSE0_IN 10/11"]
+    #[doc = "Bits 0:1 - GPIOA Pin 0"]
     #[inline]
     pub fn pa00(&mut self) -> _PA00W {
         _PA00W { w: self }
     }
-    #[doc = "Bits 2:3 - 00 GPIO 01 TMRSE0_OUT 10/11"]
+    #[doc = "Bits 2:3 - GPIOA Pin 1"]
     #[inline]
     pub fn pa01(&mut self) -> _PA01W {
         _PA01W { w: self }
     }
-    #[doc = "Bits 4:5 - 00 GPIO 01 TMRSE1_IN 10/11"]
+    #[doc = "Bits 4:5 - GPIOA Pin 2"]
     #[inline]
     pub fn pa02(&mut self) -> _PA02W {
         _PA02W { w: self }
     }
-    #[doc = "Bits 6:7 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa03(&mut self) -> _PA03W {
-        _PA03W { w: self }
-    }
-    #[doc = "Bits 8:9 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa04(&mut self) -> _PA04W {
-        _PA04W { w: self }
-    }
-    #[doc = "Bits 10:11 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa05(&mut self) -> _PA05W {
-        _PA05W { w: self }
-    }
-    #[doc = "Bits 12:13 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa06(&mut self) -> _PA06W {
-        _PA06W { w: self }
-    }
-    #[doc = "Bits 14:15 - 00 GPIO 01 TMRSE1OUT 10/11"]
+    #[doc = "Bits 14:15 - GPIOA Pin 7"]
     #[inline]
     pub fn pa07(&mut self) -> _PA07W {
         _PA07W { w: self }
-    }
-    #[doc = "Bits 16:17 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa08(&mut self) -> _PA08W {
-        _PA08W { w: self }
-    }
-    #[doc = "Bits 18:19 - 00 GPIO 01 10/11"]
-    #[inline]
-    pub fn pa09(&mut self) -> _PA09W {
-        _PA09W { w: self }
     }
 }
