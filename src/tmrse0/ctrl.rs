@@ -63,15 +63,60 @@ impl ENAR {
         self.bit()
     }
 }
-#[doc = r" Value of the field"]
-pub struct WMODR {
-    bits: u8,
+#[doc = "Possible values of the field `WMOD`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WMODR {
+    #[doc = "Timer/Counter Mode"]
+    COUNTER,
+    #[doc = "PWM Mode"]
+    PWM,
+    #[doc = "Pulse Capture mode"]
+    PULSE,
+    #[doc = "Duty Cycle capture mode"]
+    DUTY_CYCLE,
 }
 impl WMODR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            WMODR::COUNTER => 0,
+            WMODR::PWM => 1,
+            WMODR::PULSE => 2,
+            WMODR::DUTY_CYCLE => 3,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> WMODR {
+        match value {
+            0 => WMODR::COUNTER,
+            1 => WMODR::PWM,
+            2 => WMODR::PULSE,
+            3 => WMODR::DUTY_CYCLE,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `COUNTER`"]
+    #[inline]
+    pub fn is_counter(&self) -> bool {
+        *self == WMODR::COUNTER
+    }
+    #[doc = "Checks if the value of the field is `PWM`"]
+    #[inline]
+    pub fn is_pwm(&self) -> bool {
+        *self == WMODR::PWM
+    }
+    #[doc = "Checks if the value of the field is `PULSE`"]
+    #[inline]
+    pub fn is_pulse(&self) -> bool {
+        *self == WMODR::PULSE
+    }
+    #[doc = "Checks if the value of the field is `DUTY_CYCLE`"]
+    #[inline]
+    pub fn is_duty_cycle(&self) -> bool {
+        *self == WMODR::DUTY_CYCLE
     }
 }
 #[doc = r" Value of the field"]
@@ -192,14 +237,65 @@ impl<'a> _ENAW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `WMOD`"]
+pub enum WMODW {
+    #[doc = "Timer/Counter Mode"]
+    COUNTER,
+    #[doc = "PWM Mode"]
+    PWM,
+    #[doc = "Pulse Capture mode"]
+    PULSE,
+    #[doc = "Duty Cycle capture mode"]
+    DUTY_CYCLE,
+}
+impl WMODW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            WMODW::COUNTER => 0,
+            WMODW::PWM => 1,
+            WMODW::PULSE => 2,
+            WMODW::DUTY_CYCLE => 3,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _WMODW<'a> {
     w: &'a mut W,
 }
 impl<'a> _WMODW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: WMODW) -> &'a mut W {
+        {
+            self.bits(variant._bits())
+        }
+    }
+    #[doc = "Timer/Counter Mode"]
+    #[inline]
+    pub fn counter(self) -> &'a mut W {
+        self.variant(WMODW::COUNTER)
+    }
+    #[doc = "PWM Mode"]
+    #[inline]
+    pub fn pwm(self) -> &'a mut W {
+        self.variant(WMODW::PWM)
+    }
+    #[doc = "Pulse Capture mode"]
+    #[inline]
+    pub fn pulse(self) -> &'a mut W {
+        self.variant(WMODW::PULSE)
+    }
+    #[doc = "Duty Cycle capture mode"]
+    #[inline]
+    pub fn duty_cycle(self) -> &'a mut W {
+        self.variant(WMODW::DUTY_CYCLE)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 3;
         const OFFSET: u8 = 4;
         self.w.bits &= !((MASK as u32) << OFFSET);
@@ -330,15 +426,14 @@ impl R {
         };
         ENAR { bits }
     }
-    #[doc = "Bits 4:5 - 00 Timer/Counter Mode 01 PWM Mode 10 Pulse Width Capture Mode 11 Duty Cycle Capture Mode"]
+    #[doc = "Bits 4:5 - Operating Mode Selection"]
     #[inline]
     pub fn wmod(&self) -> WMODR {
-        let bits = {
+        WMODR::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 4;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        WMODR { bits }
+        })
     }
     #[doc = "Bit 8 - 0 Internal 1 External"]
     #[inline]
@@ -408,7 +503,7 @@ impl W {
     pub fn ena(&mut self) -> _ENAW {
         _ENAW { w: self }
     }
-    #[doc = "Bits 4:5 - 00 Timer/Counter Mode 01 PWM Mode 10 Pulse Width Capture Mode 11 Duty Cycle Capture Mode"]
+    #[doc = "Bits 4:5 - Operating Mode Selection"]
     #[inline]
     pub fn wmod(&mut self) -> _WMODW {
         _WMODW { w: self }

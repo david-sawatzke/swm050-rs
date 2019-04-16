@@ -1,0 +1,36 @@
+--- SWM050-patched.svd.orig	2019-04-16 10:59:05.973001029 +0200
++++ SWM050-patched.svd	2019-04-16 13:34:23.330691702 +0200
+@@ -1725,10 +1725,32 @@
+             </field>
+             <field>
+               <name>WMOD</name>
+-              <description>00 Timer/Counter Mode 01 PWM Mode 10 Pulse Width Capture Mode 11 Duty Cycle Capture Mode</description>
++              <description>Operating Mode Selection</description>
+               <bitOffset>4</bitOffset>
+               <bitWidth>2</bitWidth>
+               <access>read-write</access>
++              <enumeratedValues>
++                <enumeratedValue>
++                  <name>counter</name>
++                  <description>Timer/Counter Mode</description>
++                  <value>0</value>
++                </enumeratedValue>
++                <enumeratedValue>
++                  <name>PWM</name>
++                  <description>PWM Mode</description>
++                  <value>1</value>
++                </enumeratedValue>
++                <enumeratedValue>
++                  <name>pulse</name>
++                  <description>Pulse Capture mode</description>
++                  <value>2</value>
++                </enumeratedValue>
++                <enumeratedValue>
++                  <name>duty_cycle</name>
++                  <description>Duty Cycle capture mode</description>
++                  <value>3</value>
++                </enumeratedValue>
++              </enumeratedValues>
+             </field>
+             <field>
+               <name>OSCMOD</name>
