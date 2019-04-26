@@ -1,0 +1,19 @@
+--- SWM050-patched.svd.orig	2019-04-26 12:59:44.279753927 +0200
++++ SWM050-patched.svd	2019-04-26 14:08:01.466627545 +0200
+@@ -3,6 +3,16 @@
+   <name>SWM050</name>
+   <version>0.1</version>
+   <description>SWM050 Microcontroller registers</description>
++  <cpu>
++    <name>CM0</name>
++    <revision>r0p0</revision>
++    <endian>little</endian>
++    <mpuPresent>false</mpuPresent>
++    <fpuPresent>false</fpuPresent>
++    <vtorPresent>true</vtorPresent>
++    <nvicPrioBits>2</nvicPrioBits>
++    <vendorSystickConfig>true</vendorSystickConfig>
++  </cpu>
+   <addressUnitBits>8</addressUnitBits>
+   <width>32</width>
+   <size>32</size>

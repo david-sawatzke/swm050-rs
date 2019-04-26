@@ -10,6 +10,8 @@ extern crate cortex_m_rt;
 extern crate vcell;
 use core::marker::PhantomData;
 use core::ops::Deref;
+#[doc = r" Number available in the NVIC for configuring priority"]
+pub const NVIC_PRIO_BITS: u8 = 2;
 #[cfg(feature = "rt")]
 extern "C" {
     fn TMRSE0();
@@ -102,7 +104,7 @@ unsafe impl ::bare_metal::Nr for Interrupt {
 #[cfg(feature = "rt")]
 pub use self::Interrupt as interrupt;
 pub use cortex_m::peripheral::Peripherals as CorePeripherals;
-pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, FPU, ITM, MPU, NVIC, SCB, SYST, TPIU};
+pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, ITM, MPU, NVIC, SCB, SYST, TPIU};
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
 #[doc = "Registers group"]
