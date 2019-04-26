@@ -11,7 +11,21 @@ extern crate vcell;
 use core::marker::PhantomData;
 use core::ops::Deref;
 #[cfg(feature = "rt")]
-extern "C" {}
+extern "C" {
+    fn TMRSE0();
+    fn TMRSE1();
+    fn WDT();
+    fn ACMP();
+    fn GPIOA0();
+    fn GPIOA1();
+    fn GPIOA2();
+    fn GPIOA3();
+    fn GPIOA4();
+    fn GPIOA5();
+    fn GPIOA6();
+    fn GPIOA7();
+    fn GPIOA9();
+}
 #[doc(hidden)]
 pub union Vector {
     _handler: unsafe extern "C" fn(),
@@ -21,13 +35,68 @@ pub union Vector {
 #[doc(hidden)]
 #[link_section = ".vector_table.interrupts"]
 #[no_mangle]
-pub static __INTERRUPTS: [Vector; 0] = [];
+pub static __INTERRUPTS: [Vector; 13] = [
+    Vector { _handler: TMRSE0 },
+    Vector { _handler: TMRSE1 },
+    Vector { _handler: WDT },
+    Vector { _handler: ACMP },
+    Vector { _handler: GPIOA0 },
+    Vector { _handler: GPIOA1 },
+    Vector { _handler: GPIOA2 },
+    Vector { _handler: GPIOA3 },
+    Vector { _handler: GPIOA4 },
+    Vector { _handler: GPIOA5 },
+    Vector { _handler: GPIOA6 },
+    Vector { _handler: GPIOA7 },
+    Vector { _handler: GPIOA9 },
+];
 #[doc = r" Enumeration of all the interrupts"]
-pub enum Interrupt {}
+pub enum Interrupt {
+    #[doc = "0 - TMRSE0"]
+    TMRSE0,
+    #[doc = "1 - TMRSE1"]
+    TMRSE1,
+    #[doc = "2 - WDT"]
+    WDT,
+    #[doc = "3 - ACMP"]
+    ACMP,
+    #[doc = "4 - GPIOA0"]
+    GPIOA0,
+    #[doc = "5 - GPIOA1"]
+    GPIOA1,
+    #[doc = "6 - GPIOA2"]
+    GPIOA2,
+    #[doc = "7 - GPIOA3"]
+    GPIOA3,
+    #[doc = "8 - GPIOA4"]
+    GPIOA4,
+    #[doc = "9 - GPIOA5"]
+    GPIOA5,
+    #[doc = "10 - GPIOA6"]
+    GPIOA6,
+    #[doc = "11 - GPIOA7"]
+    GPIOA7,
+    #[doc = "12 - GPIOA9"]
+    GPIOA9,
+}
 unsafe impl ::bare_metal::Nr for Interrupt {
     #[inline]
     fn nr(&self) -> u8 {
-        match *self {}
+        match *self {
+            Interrupt::TMRSE0 => 0,
+            Interrupt::TMRSE1 => 1,
+            Interrupt::WDT => 2,
+            Interrupt::ACMP => 3,
+            Interrupt::GPIOA0 => 4,
+            Interrupt::GPIOA1 => 5,
+            Interrupt::GPIOA2 => 6,
+            Interrupt::GPIOA3 => 7,
+            Interrupt::GPIOA4 => 8,
+            Interrupt::GPIOA5 => 9,
+            Interrupt::GPIOA6 => 10,
+            Interrupt::GPIOA7 => 11,
+            Interrupt::GPIOA9 => 12,
+        }
     }
 }
 #[cfg(feature = "rt")]
