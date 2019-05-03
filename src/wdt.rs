@@ -7,7 +7,7 @@ pub struct RegisterBlock {
     pub torr: TORR,
     #[doc = "0x08 - CCVR"]
     pub ccvr: CCVR,
-    #[doc = "0x0c - CRR"]
+    #[doc = "0x0c - Counter Restart Register"]
     pub crr: CRR,
     #[doc = "0x10 - STAT"]
     pub stat: STAT,
@@ -32,11 +32,11 @@ pub struct CCVR {
 }
 #[doc = "CCVR"]
 pub mod ccvr;
-#[doc = "CRR"]
+#[doc = "Counter Restart Register"]
 pub struct CRR {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "CRR"]
+#[doc = "Counter Restart Register"]
 pub mod crr;
 #[doc = "STAT"]
 pub struct STAT {
