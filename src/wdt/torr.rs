@@ -71,7 +71,7 @@ pub struct _TOPW<'a> {
 impl<'a> _TOPW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);
@@ -86,7 +86,7 @@ pub struct _TOP_INITW<'a> {
 impl<'a> _TOP_INITW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 15;
         const OFFSET: u8 = 4;
         self.w.bits &= !((MASK as u32) << OFFSET);

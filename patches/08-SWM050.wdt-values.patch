@@ -1,5 +1,31 @@
 --- SWM050-patched.svd.orig	2019-05-03 14:10:56.139767129 +0200
 +++ SWM050-patched.svd	2019-05-03 15:38:48.772872900 +0200
+@@ -1707,6 +1707,12 @@
+               <bitOffset>0</bitOffset>
+               <bitWidth>4</bitWidth>
+               <access>read-write</access>
++              <writeConstraint>
++                <range>
++                  <minimum>0</minimum>
++                  <maximum>15</maximum>
++                </range>
++              </writeConstraint>
+             </field>
+             <field>
+               <name>TOP_INIT</name>
+@@ -1714,6 +1720,12 @@
+               <bitOffset>4</bitOffset>
+               <bitWidth>4</bitWidth>
+               <access>read-write</access>
++              <writeConstraint>
++                <range>
++                  <minimum>0</minimum>
++                  <maximum>15</maximum>
++                </range>
++              </writeConstraint>
+             </field>
+           </fields>
+         </register>
 @@ -1728,12 +1728,26 @@
          </register>
          <register>
