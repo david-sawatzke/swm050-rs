@@ -1,4 +1,4 @@
-#![doc = "Peripheral access API for SWM050 microcontrollers (generated using svd2rust v0.14.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.14.0/svd2rust/#peripheral-api"]
+#![doc = "Peripheral access API for SWM050 microcontrollers (generated using svd2rust v0.16.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.16.1/svd2rust/#peripheral-api"]
 #![deny(missing_docs)]
 #![deny(warnings)]
 #![allow(non_camel_case_types)]
@@ -10,7 +10,7 @@ extern crate cortex_m_rt;
 extern crate vcell;
 use core::marker::PhantomData;
 use core::ops::Deref;
-#[doc = r" Number available in the NVIC for configuring priority"]
+#[doc = r"Number available in the NVIC for configuring priority"]
 pub const NVIC_PRIO_BITS: u8 = 2;
 #[cfg(feature = "rt")]
 extern "C" {
@@ -52,7 +52,8 @@ pub static __INTERRUPTS: [Vector; 13] = [
     Vector { _handler: GPIOA7 },
     Vector { _handler: GPIOA9 },
 ];
-#[doc = r" Enumeration of all the interrupts"]
+#[doc = r"Enumeration of all the interrupts"]
+#[derive(Copy, Clone, Debug)]
 pub enum Interrupt {
     #[doc = "0 - TMRSE0"]
     TMRSE0,
@@ -81,7 +82,7 @@ pub enum Interrupt {
     #[doc = "12 - GPIOA9"]
     GPIOA9,
 }
-unsafe impl ::bare_metal::Nr for Interrupt {
+unsafe impl bare_metal::Nr for Interrupt {
     #[inline]
     fn nr(&self) -> u8 {
         match *self {
@@ -107,20 +108,25 @@ pub use cortex_m::peripheral::Peripherals as CorePeripherals;
 pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, ITM, MPU, NVIC, SCB, SYST, TPIU};
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
+#[allow(unused_imports)]
+use generic::*;
+#[doc = r"Common register and bit access and modify traits"]
+pub mod generic;
 #[doc = "Registers group"]
 pub struct SYS {
     _marker: PhantomData<*const ()>,
 }
 unsafe impl Send for SYS {}
 impl SYS {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const sys::RegisterBlock {
-        1074724864 as *const _
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const sys::RegisterBlock {
+        0x400f_0000 as *const _
     }
 }
 impl Deref for SYS {
     type Target = sys::RegisterBlock;
-    fn deref(&self) -> &sys::RegisterBlock {
+    fn deref(&self) -> &Self::Target {
         unsafe { &*SYS::ptr() }
     }
 }
@@ -132,14 +138,15 @@ pub struct PORT {
 }
 unsafe impl Send for PORT {}
 impl PORT {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const port::RegisterBlock {
-        1073741872 as *const _
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const port::RegisterBlock {
+        0x4000_0030 as *const _
     }
 }
 impl Deref for PORT {
     type Target = port::RegisterBlock;
-    fn deref(&self) -> &port::RegisterBlock {
+    fn deref(&self) -> &Self::Target {
         unsafe { &*PORT::ptr() }
     }
 }
@@ -151,14 +158,15 @@ pub struct GPIOA {
 }
 unsafe impl Send for GPIOA {}
 impl GPIOA {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const gpioa::RegisterBlock {
-        1073745920 as *const _
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpioa::RegisterBlock {
+        0x4000_1000 as *const _
     }
 }
 impl Deref for GPIOA {
     type Target = gpioa::RegisterBlock;
-    fn deref(&self) -> &gpioa::RegisterBlock {
+    fn deref(&self) -> &Self::Target {
         unsafe { &*GPIOA::ptr() }
     }
 }
@@ -170,14 +178,15 @@ pub struct ACMP {
 }
 unsafe impl Send for ACMP {}
 impl ACMP {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const acmp::RegisterBlock {
-        1073743872 as *const _
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const acmp::RegisterBlock {
+        0x4000_0800 as *const _
     }
 }
 impl Deref for ACMP {
     type Target = acmp::RegisterBlock;
-    fn deref(&self) -> &acmp::RegisterBlock {
+    fn deref(&self) -> &Self::Target {
         unsafe { &*ACMP::ptr() }
     }
 }
@@ -189,14 +198,15 @@ pub struct WDT {
 }
 unsafe impl Send for WDT {}
 impl WDT {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const wdt::RegisterBlock {
-        1073844224 as *const _
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const wdt::RegisterBlock {
+        0x4001_9000 as *const _
     }
 }
 impl Deref for WDT {
     type Target = wdt::RegisterBlock;
-    fn deref(&self) -> &wdt::RegisterBlock {
+    fn deref(&self) -> &Self::Target {
         unsafe { &*WDT::ptr() }
     }
 }
@@ -208,14 +218,15 @@ pub struct TMRSE0 {
 }
 unsafe impl Send for TMRSE0 {}
 impl TMRSE0 {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const tmrse0::RegisterBlock {
-        1073750016 as *const _
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tmrse0::RegisterBlock {
+        0x4000_2000 as *const _
     }
 }
 impl Deref for TMRSE0 {
     type Target = tmrse0::RegisterBlock;
-    fn deref(&self) -> &tmrse0::RegisterBlock {
+    fn deref(&self) -> &Self::Target {
         unsafe { &*TMRSE0::ptr() }
     }
 }
@@ -227,22 +238,21 @@ pub struct TMRSE1 {
 }
 unsafe impl Send for TMRSE1 {}
 impl TMRSE1 {
-    #[doc = r" Returns a pointer to the register block"]
-    pub fn ptr() -> *const tmrse0::RegisterBlock {
-        1073751040 as *const _
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tmrse0::RegisterBlock {
+        0x4000_2400 as *const _
     }
 }
 impl Deref for TMRSE1 {
     type Target = tmrse0::RegisterBlock;
-    fn deref(&self) -> &tmrse0::RegisterBlock {
+    fn deref(&self) -> &Self::Target {
         unsafe { &*TMRSE1::ptr() }
     }
 }
-#[allow(renamed_and_removed_lints)]
-#[allow(private_no_mangle_statics)]
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
-#[doc = r" All the peripherals"]
+#[doc = r"All the peripherals"]
 #[allow(non_snake_case)]
 pub struct Peripherals {
     #[doc = "SYS"]
@@ -261,7 +271,7 @@ pub struct Peripherals {
     pub TMRSE1: TMRSE1,
 }
 impl Peripherals {
-    #[doc = r" Returns all the peripherals *once*"]
+    #[doc = r"Returns all the peripherals *once*"]
     #[inline]
     pub fn take() -> Option<Self> {
         cortex_m::interrupt::free(|_| {
@@ -272,9 +282,8 @@ impl Peripherals {
             }
         })
     }
-    #[doc = r" Unchecked version of `Peripherals::take`"]
+    #[doc = r"Unchecked version of `Peripherals::take`"]
     pub unsafe fn steal() -> Self {
-        debug_assert!(!DEVICE_PERIPHERALS);
         DEVICE_PERIPHERALS = true;
         Peripherals {
             SYS: SYS {

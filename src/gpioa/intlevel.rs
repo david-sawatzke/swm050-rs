@@ -1,654 +1,356 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTLEVEL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTLEVEL"]
+pub type R = crate::R<u32, super::INTLEVEL>;
+#[doc = "Writer for register INTLEVEL"]
+pub type W = crate::W<u32, super::INTLEVEL>;
+#[doc = "Register INTLEVEL `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTLEVEL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct INTLEVEL0R {
-    bits: bool,
-}
-impl INTLEVEL0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL1R {
-    bits: bool,
-}
-impl INTLEVEL1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL2R {
-    bits: bool,
-}
-impl INTLEVEL2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL3R {
-    bits: bool,
-}
-impl INTLEVEL3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL4R {
-    bits: bool,
-}
-impl INTLEVEL4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL5R {
-    bits: bool,
-}
-impl INTLEVEL5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL6R {
-    bits: bool,
-}
-impl INTLEVEL6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL7R {
-    bits: bool,
-}
-impl INTLEVEL7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL8R {
-    bits: bool,
-}
-impl INTLEVEL8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTLEVEL9R {
-    bits: bool,
-}
-impl INTLEVEL9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INTLEVEL0W<'a> {
+#[doc = "Reader of field `INTLEVEL0`"]
+pub type INTLEVEL0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL0`"]
+pub struct INTLEVEL0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL1W<'a> {
+#[doc = "Reader of field `INTLEVEL1`"]
+pub type INTLEVEL1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL1`"]
+pub struct INTLEVEL1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL2W<'a> {
+#[doc = "Reader of field `INTLEVEL2`"]
+pub type INTLEVEL2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL2`"]
+pub struct INTLEVEL2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL3W<'a> {
+#[doc = "Reader of field `INTLEVEL3`"]
+pub type INTLEVEL3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL3`"]
+pub struct INTLEVEL3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL3W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL4W<'a> {
+#[doc = "Reader of field `INTLEVEL4`"]
+pub type INTLEVEL4_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL4`"]
+pub struct INTLEVEL4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL4W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL4_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL5W<'a> {
+#[doc = "Reader of field `INTLEVEL5`"]
+pub type INTLEVEL5_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL5`"]
+pub struct INTLEVEL5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL5W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL5_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL6W<'a> {
+#[doc = "Reader of field `INTLEVEL6`"]
+pub type INTLEVEL6_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL6`"]
+pub struct INTLEVEL6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL6W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL6_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL7W<'a> {
+#[doc = "Reader of field `INTLEVEL7`"]
+pub type INTLEVEL7_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL7`"]
+pub struct INTLEVEL7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL7W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL7_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL8W<'a> {
+#[doc = "Reader of field `INTLEVEL8`"]
+pub type INTLEVEL8_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL8`"]
+pub struct INTLEVEL8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL8W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL8_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTLEVEL9W<'a> {
+#[doc = "Reader of field `INTLEVEL9`"]
+pub type INTLEVEL9_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTLEVEL9`"]
+pub struct INTLEVEL9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTLEVEL9W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTLEVEL9_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - INTLEVEL0"]
-    #[inline]
-    pub fn intlevel0(&self) -> INTLEVEL0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL0R { bits }
+    #[inline(always)]
+    pub fn intlevel0(&self) -> INTLEVEL0_R {
+        INTLEVEL0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - INTLEVEL1"]
-    #[inline]
-    pub fn intlevel1(&self) -> INTLEVEL1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL1R { bits }
+    #[inline(always)]
+    pub fn intlevel1(&self) -> INTLEVEL1_R {
+        INTLEVEL1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - INTLEVEL2"]
-    #[inline]
-    pub fn intlevel2(&self) -> INTLEVEL2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL2R { bits }
+    #[inline(always)]
+    pub fn intlevel2(&self) -> INTLEVEL2_R {
+        INTLEVEL2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - INTLEVEL3"]
-    #[inline]
-    pub fn intlevel3(&self) -> INTLEVEL3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL3R { bits }
+    #[inline(always)]
+    pub fn intlevel3(&self) -> INTLEVEL3_R {
+        INTLEVEL3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - INTLEVEL4"]
-    #[inline]
-    pub fn intlevel4(&self) -> INTLEVEL4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL4R { bits }
+    #[inline(always)]
+    pub fn intlevel4(&self) -> INTLEVEL4_R {
+        INTLEVEL4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - INTLEVEL5"]
-    #[inline]
-    pub fn intlevel5(&self) -> INTLEVEL5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL5R { bits }
+    #[inline(always)]
+    pub fn intlevel5(&self) -> INTLEVEL5_R {
+        INTLEVEL5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - INTLEVEL6"]
-    #[inline]
-    pub fn intlevel6(&self) -> INTLEVEL6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL6R { bits }
+    #[inline(always)]
+    pub fn intlevel6(&self) -> INTLEVEL6_R {
+        INTLEVEL6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - INTLEVEL7"]
-    #[inline]
-    pub fn intlevel7(&self) -> INTLEVEL7R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL7R { bits }
+    #[inline(always)]
+    pub fn intlevel7(&self) -> INTLEVEL7_R {
+        INTLEVEL7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - INTLEVEL8"]
-    #[inline]
-    pub fn intlevel8(&self) -> INTLEVEL8R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL8R { bits }
+    #[inline(always)]
+    pub fn intlevel8(&self) -> INTLEVEL8_R {
+        INTLEVEL8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - INTLEVEL9"]
-    #[inline]
-    pub fn intlevel9(&self) -> INTLEVEL9R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTLEVEL9R { bits }
+    #[inline(always)]
+    pub fn intlevel9(&self) -> INTLEVEL9_R {
+        INTLEVEL9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - INTLEVEL0"]
-    #[inline]
-    pub fn intlevel0(&mut self) -> _INTLEVEL0W {
-        _INTLEVEL0W { w: self }
+    #[inline(always)]
+    pub fn intlevel0(&mut self) -> INTLEVEL0_W {
+        INTLEVEL0_W { w: self }
     }
     #[doc = "Bit 1 - INTLEVEL1"]
-    #[inline]
-    pub fn intlevel1(&mut self) -> _INTLEVEL1W {
-        _INTLEVEL1W { w: self }
+    #[inline(always)]
+    pub fn intlevel1(&mut self) -> INTLEVEL1_W {
+        INTLEVEL1_W { w: self }
     }
     #[doc = "Bit 2 - INTLEVEL2"]
-    #[inline]
-    pub fn intlevel2(&mut self) -> _INTLEVEL2W {
-        _INTLEVEL2W { w: self }
+    #[inline(always)]
+    pub fn intlevel2(&mut self) -> INTLEVEL2_W {
+        INTLEVEL2_W { w: self }
     }
     #[doc = "Bit 3 - INTLEVEL3"]
-    #[inline]
-    pub fn intlevel3(&mut self) -> _INTLEVEL3W {
-        _INTLEVEL3W { w: self }
+    #[inline(always)]
+    pub fn intlevel3(&mut self) -> INTLEVEL3_W {
+        INTLEVEL3_W { w: self }
     }
     #[doc = "Bit 4 - INTLEVEL4"]
-    #[inline]
-    pub fn intlevel4(&mut self) -> _INTLEVEL4W {
-        _INTLEVEL4W { w: self }
+    #[inline(always)]
+    pub fn intlevel4(&mut self) -> INTLEVEL4_W {
+        INTLEVEL4_W { w: self }
     }
     #[doc = "Bit 5 - INTLEVEL5"]
-    #[inline]
-    pub fn intlevel5(&mut self) -> _INTLEVEL5W {
-        _INTLEVEL5W { w: self }
+    #[inline(always)]
+    pub fn intlevel5(&mut self) -> INTLEVEL5_W {
+        INTLEVEL5_W { w: self }
     }
     #[doc = "Bit 6 - INTLEVEL6"]
-    #[inline]
-    pub fn intlevel6(&mut self) -> _INTLEVEL6W {
-        _INTLEVEL6W { w: self }
+    #[inline(always)]
+    pub fn intlevel6(&mut self) -> INTLEVEL6_W {
+        INTLEVEL6_W { w: self }
     }
     #[doc = "Bit 7 - INTLEVEL7"]
-    #[inline]
-    pub fn intlevel7(&mut self) -> _INTLEVEL7W {
-        _INTLEVEL7W { w: self }
+    #[inline(always)]
+    pub fn intlevel7(&mut self) -> INTLEVEL7_W {
+        INTLEVEL7_W { w: self }
     }
     #[doc = "Bit 8 - INTLEVEL8"]
-    #[inline]
-    pub fn intlevel8(&mut self) -> _INTLEVEL8W {
-        _INTLEVEL8W { w: self }
+    #[inline(always)]
+    pub fn intlevel8(&mut self) -> INTLEVEL8_W {
+        INTLEVEL8_W { w: self }
     }
     #[doc = "Bit 9 - INTLEVEL9"]
-    #[inline]
-    pub fn intlevel9(&mut self) -> _INTLEVEL9W {
-        _INTLEVEL9W { w: self }
+    #[inline(always)]
+    pub fn intlevel9(&mut self) -> INTLEVEL9_W {
+        INTLEVEL9_W { w: self }
     }
 }

@@ -1,477 +1,254 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CPINTCON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CPINTCON"]
+pub type R = crate::R<u32, super::CPINTCON>;
+#[doc = "Writer for register CPINTCON"]
+pub type W = crate::W<u32, super::CPINTCON>;
+#[doc = "Register CPINTCON `reset()`'s with value 0"]
+impl crate::ResetValue for super::CPINTCON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct INTMASKNR {
-    bits: bool,
-}
-impl INTMASKNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTUPR {
-    bits: bool,
-}
-impl INTUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTDOWNR {
-    bits: bool,
-}
-impl INTDOWNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MOSINTMASKNR {
-    bits: bool,
-}
-impl MOSINTMASKNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MOSINTENR {
-    bits: bool,
-}
-impl MOSINTENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MOSINTUPR {
-    bits: bool,
-}
-impl MOSINTUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MOSINTDOWNR {
-    bits: bool,
-}
-impl MOSINTDOWNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INTMASKNW<'a> {
+#[doc = "Reader of field `INTMASKn`"]
+pub type INTMASKN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTMASKn`"]
+pub struct INTMASKN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTMASKNW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTMASKN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTUPW<'a> {
+#[doc = "Reader of field `INTUP`"]
+pub type INTUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTUP`"]
+pub struct INTUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTDOWNW<'a> {
+#[doc = "Reader of field `INTDOWN`"]
+pub type INTDOWN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTDOWN`"]
+pub struct INTDOWN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTDOWNW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTDOWN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MOSINTMASKNW<'a> {
+#[doc = "Reader of field `MOSINTMASKn`"]
+pub type MOSINTMASKN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MOSINTMASKn`"]
+pub struct MOSINTMASKN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MOSINTMASKNW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MOSINTMASKN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MOSINTENW<'a> {
+#[doc = "Reader of field `MOSINTEN`"]
+pub type MOSINTEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MOSINTEN`"]
+pub struct MOSINTEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MOSINTENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MOSINTEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MOSINTUPW<'a> {
+#[doc = "Reader of field `MOSINTUP`"]
+pub type MOSINTUP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MOSINTUP`"]
+pub struct MOSINTUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MOSINTUPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MOSINTUP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MOSINTDOWNW<'a> {
+#[doc = "Reader of field `MOSINTDOWN`"]
+pub type MOSINTDOWN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MOSINTDOWN`"]
+pub struct MOSINTDOWN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MOSINTDOWNW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MOSINTDOWN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - INTMASKn"]
-    #[inline]
-    pub fn intmaskn(&self) -> INTMASKNR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTMASKNR { bits }
+    #[inline(always)]
+    pub fn intmaskn(&self) -> INTMASKN_R {
+        INTMASKN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - INTUP"]
-    #[inline]
-    pub fn intup(&self) -> INTUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTUPR { bits }
+    #[inline(always)]
+    pub fn intup(&self) -> INTUP_R {
+        INTUP_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - INTDOWN"]
-    #[inline]
-    pub fn intdown(&self) -> INTDOWNR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTDOWNR { bits }
+    #[inline(always)]
+    pub fn intdown(&self) -> INTDOWN_R {
+        INTDOWN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - MOSINTMASKn"]
-    #[inline]
-    pub fn mosintmaskn(&self) -> MOSINTMASKNR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MOSINTMASKNR { bits }
+    #[inline(always)]
+    pub fn mosintmaskn(&self) -> MOSINTMASKN_R {
+        MOSINTMASKN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - MOSINTEN"]
-    #[inline]
-    pub fn mosinten(&self) -> MOSINTENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MOSINTENR { bits }
+    #[inline(always)]
+    pub fn mosinten(&self) -> MOSINTEN_R {
+        MOSINTEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - MOSINTUP"]
-    #[inline]
-    pub fn mosintup(&self) -> MOSINTUPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MOSINTUPR { bits }
+    #[inline(always)]
+    pub fn mosintup(&self) -> MOSINTUP_R {
+        MOSINTUP_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - MOSINTDOWN"]
-    #[inline]
-    pub fn mosintdown(&self) -> MOSINTDOWNR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MOSINTDOWNR { bits }
+    #[inline(always)]
+    pub fn mosintdown(&self) -> MOSINTDOWN_R {
+        MOSINTDOWN_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - INTMASKn"]
-    #[inline]
-    pub fn intmaskn(&mut self) -> _INTMASKNW {
-        _INTMASKNW { w: self }
+    #[inline(always)]
+    pub fn intmaskn(&mut self) -> INTMASKN_W {
+        INTMASKN_W { w: self }
     }
     #[doc = "Bit 2 - INTUP"]
-    #[inline]
-    pub fn intup(&mut self) -> _INTUPW {
-        _INTUPW { w: self }
+    #[inline(always)]
+    pub fn intup(&mut self) -> INTUP_W {
+        INTUP_W { w: self }
     }
     #[doc = "Bit 3 - INTDOWN"]
-    #[inline]
-    pub fn intdown(&mut self) -> _INTDOWNW {
-        _INTDOWNW { w: self }
+    #[inline(always)]
+    pub fn intdown(&mut self) -> INTDOWN_W {
+        INTDOWN_W { w: self }
     }
     #[doc = "Bit 4 - MOSINTMASKn"]
-    #[inline]
-    pub fn mosintmaskn(&mut self) -> _MOSINTMASKNW {
-        _MOSINTMASKNW { w: self }
+    #[inline(always)]
+    pub fn mosintmaskn(&mut self) -> MOSINTMASKN_W {
+        MOSINTMASKN_W { w: self }
     }
     #[doc = "Bit 5 - MOSINTEN"]
-    #[inline]
-    pub fn mosinten(&mut self) -> _MOSINTENW {
-        _MOSINTENW { w: self }
+    #[inline(always)]
+    pub fn mosinten(&mut self) -> MOSINTEN_W {
+        MOSINTEN_W { w: self }
     }
     #[doc = "Bit 6 - MOSINTUP"]
-    #[inline]
-    pub fn mosintup(&mut self) -> _MOSINTUPW {
-        _MOSINTUPW { w: self }
+    #[inline(always)]
+    pub fn mosintup(&mut self) -> MOSINTUP_W {
+        MOSINTUP_W { w: self }
     }
     #[doc = "Bit 7 - MOSINTDOWN"]
-    #[inline]
-    pub fn mosintdown(&mut self) -> _MOSINTDOWNW {
-        _MOSINTDOWNW { w: self }
+    #[inline(always)]
+    pub fn mosintdown(&mut self) -> MOSINTDOWN_W {
+        MOSINTDOWN_W { w: self }
     }
 }

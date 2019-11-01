@@ -1,330 +1,74 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::INTRAWS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS0R {
-    bits: bool,
-}
-impl INTRAWS0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS1R {
-    bits: bool,
-}
-impl INTRAWS1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS2R {
-    bits: bool,
-}
-impl INTRAWS2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS3R {
-    bits: bool,
-}
-impl INTRAWS3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS4R {
-    bits: bool,
-}
-impl INTRAWS4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS5R {
-    bits: bool,
-}
-impl INTRAWS5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS6R {
-    bits: bool,
-}
-impl INTRAWS6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS7R {
-    bits: bool,
-}
-impl INTRAWS7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS8R {
-    bits: bool,
-}
-impl INTRAWS8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTRAWS9R {
-    bits: bool,
-}
-impl INTRAWS9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register INTRAWS"]
+pub type R = crate::R<u32, super::INTRAWS>;
+#[doc = "Reader of field `INTRAWS0`"]
+pub type INTRAWS0_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS1`"]
+pub type INTRAWS1_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS2`"]
+pub type INTRAWS2_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS3`"]
+pub type INTRAWS3_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS4`"]
+pub type INTRAWS4_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS5`"]
+pub type INTRAWS5_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS6`"]
+pub type INTRAWS6_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS7`"]
+pub type INTRAWS7_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS8`"]
+pub type INTRAWS8_R = crate::R<bool, bool>;
+#[doc = "Reader of field `INTRAWS9`"]
+pub type INTRAWS9_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - INTRAWS0"]
-    #[inline]
-    pub fn intraws0(&self) -> INTRAWS0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS0R { bits }
+    #[inline(always)]
+    pub fn intraws0(&self) -> INTRAWS0_R {
+        INTRAWS0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - INTRAWS1"]
-    #[inline]
-    pub fn intraws1(&self) -> INTRAWS1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS1R { bits }
+    #[inline(always)]
+    pub fn intraws1(&self) -> INTRAWS1_R {
+        INTRAWS1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - INTRAWS2"]
-    #[inline]
-    pub fn intraws2(&self) -> INTRAWS2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS2R { bits }
+    #[inline(always)]
+    pub fn intraws2(&self) -> INTRAWS2_R {
+        INTRAWS2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - INTRAWS3"]
-    #[inline]
-    pub fn intraws3(&self) -> INTRAWS3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS3R { bits }
+    #[inline(always)]
+    pub fn intraws3(&self) -> INTRAWS3_R {
+        INTRAWS3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - INTRAWS4"]
-    #[inline]
-    pub fn intraws4(&self) -> INTRAWS4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS4R { bits }
+    #[inline(always)]
+    pub fn intraws4(&self) -> INTRAWS4_R {
+        INTRAWS4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - INTRAWS5"]
-    #[inline]
-    pub fn intraws5(&self) -> INTRAWS5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS5R { bits }
+    #[inline(always)]
+    pub fn intraws5(&self) -> INTRAWS5_R {
+        INTRAWS5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - INTRAWS6"]
-    #[inline]
-    pub fn intraws6(&self) -> INTRAWS6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS6R { bits }
+    #[inline(always)]
+    pub fn intraws6(&self) -> INTRAWS6_R {
+        INTRAWS6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - INTRAWS7"]
-    #[inline]
-    pub fn intraws7(&self) -> INTRAWS7R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS7R { bits }
+    #[inline(always)]
+    pub fn intraws7(&self) -> INTRAWS7_R {
+        INTRAWS7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - INTRAWS8"]
-    #[inline]
-    pub fn intraws8(&self) -> INTRAWS8R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS8R { bits }
+    #[inline(always)]
+    pub fn intraws8(&self) -> INTRAWS8_R {
+        INTRAWS8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - INTRAWS9"]
-    #[inline]
-    pub fn intraws9(&self) -> INTRAWS9R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTRAWS9R { bits }
+    #[inline(always)]
+    pub fn intraws9(&self) -> INTRAWS9_R {
+        INTRAWS9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }

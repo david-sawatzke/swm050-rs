@@ -1,654 +1,356 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTEN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTEN"]
+pub type R = crate::R<u32, super::INTEN>;
+#[doc = "Writer for register INTEN"]
+pub type W = crate::W<u32, super::INTEN>;
+#[doc = "Register INTEN `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTEN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct INTEN0R {
-    bits: bool,
-}
-impl INTEN0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN1R {
-    bits: bool,
-}
-impl INTEN1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN2R {
-    bits: bool,
-}
-impl INTEN2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN3R {
-    bits: bool,
-}
-impl INTEN3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN4R {
-    bits: bool,
-}
-impl INTEN4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN5R {
-    bits: bool,
-}
-impl INTEN5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN6R {
-    bits: bool,
-}
-impl INTEN6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN7R {
-    bits: bool,
-}
-impl INTEN7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN8R {
-    bits: bool,
-}
-impl INTEN8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTEN9R {
-    bits: bool,
-}
-impl INTEN9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INTEN0W<'a> {
+#[doc = "Reader of field `INTEN0`"]
+pub type INTEN0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN0`"]
+pub struct INTEN0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN1W<'a> {
+#[doc = "Reader of field `INTEN1`"]
+pub type INTEN1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN1`"]
+pub struct INTEN1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN2W<'a> {
+#[doc = "Reader of field `INTEN2`"]
+pub type INTEN2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN2`"]
+pub struct INTEN2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN3W<'a> {
+#[doc = "Reader of field `INTEN3`"]
+pub type INTEN3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN3`"]
+pub struct INTEN3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN3W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN4W<'a> {
+#[doc = "Reader of field `INTEN4`"]
+pub type INTEN4_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN4`"]
+pub struct INTEN4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN4W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN4_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN5W<'a> {
+#[doc = "Reader of field `INTEN5`"]
+pub type INTEN5_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN5`"]
+pub struct INTEN5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN5W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN5_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN6W<'a> {
+#[doc = "Reader of field `INTEN6`"]
+pub type INTEN6_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN6`"]
+pub struct INTEN6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN6W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN6_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN7W<'a> {
+#[doc = "Reader of field `INTEN7`"]
+pub type INTEN7_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN7`"]
+pub struct INTEN7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN7W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN7_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN8W<'a> {
+#[doc = "Reader of field `INTEN8`"]
+pub type INTEN8_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN8`"]
+pub struct INTEN8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN8W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN8_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTEN9W<'a> {
+#[doc = "Reader of field `INTEN9`"]
+pub type INTEN9_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTEN9`"]
+pub struct INTEN9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTEN9W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTEN9_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - INTEN0"]
-    #[inline]
-    pub fn inten0(&self) -> INTEN0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN0R { bits }
+    #[inline(always)]
+    pub fn inten0(&self) -> INTEN0_R {
+        INTEN0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - INTEN1"]
-    #[inline]
-    pub fn inten1(&self) -> INTEN1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN1R { bits }
+    #[inline(always)]
+    pub fn inten1(&self) -> INTEN1_R {
+        INTEN1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - INTEN2"]
-    #[inline]
-    pub fn inten2(&self) -> INTEN2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN2R { bits }
+    #[inline(always)]
+    pub fn inten2(&self) -> INTEN2_R {
+        INTEN2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - INTEN3"]
-    #[inline]
-    pub fn inten3(&self) -> INTEN3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN3R { bits }
+    #[inline(always)]
+    pub fn inten3(&self) -> INTEN3_R {
+        INTEN3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - INTEN4"]
-    #[inline]
-    pub fn inten4(&self) -> INTEN4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN4R { bits }
+    #[inline(always)]
+    pub fn inten4(&self) -> INTEN4_R {
+        INTEN4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - INTEN5"]
-    #[inline]
-    pub fn inten5(&self) -> INTEN5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN5R { bits }
+    #[inline(always)]
+    pub fn inten5(&self) -> INTEN5_R {
+        INTEN5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - INTEN6"]
-    #[inline]
-    pub fn inten6(&self) -> INTEN6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN6R { bits }
+    #[inline(always)]
+    pub fn inten6(&self) -> INTEN6_R {
+        INTEN6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - INTEN7"]
-    #[inline]
-    pub fn inten7(&self) -> INTEN7R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN7R { bits }
+    #[inline(always)]
+    pub fn inten7(&self) -> INTEN7_R {
+        INTEN7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - INTEN8"]
-    #[inline]
-    pub fn inten8(&self) -> INTEN8R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN8R { bits }
+    #[inline(always)]
+    pub fn inten8(&self) -> INTEN8_R {
+        INTEN8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - INTEN9"]
-    #[inline]
-    pub fn inten9(&self) -> INTEN9R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTEN9R { bits }
+    #[inline(always)]
+    pub fn inten9(&self) -> INTEN9_R {
+        INTEN9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - INTEN0"]
-    #[inline]
-    pub fn inten0(&mut self) -> _INTEN0W {
-        _INTEN0W { w: self }
+    #[inline(always)]
+    pub fn inten0(&mut self) -> INTEN0_W {
+        INTEN0_W { w: self }
     }
     #[doc = "Bit 1 - INTEN1"]
-    #[inline]
-    pub fn inten1(&mut self) -> _INTEN1W {
-        _INTEN1W { w: self }
+    #[inline(always)]
+    pub fn inten1(&mut self) -> INTEN1_W {
+        INTEN1_W { w: self }
     }
     #[doc = "Bit 2 - INTEN2"]
-    #[inline]
-    pub fn inten2(&mut self) -> _INTEN2W {
-        _INTEN2W { w: self }
+    #[inline(always)]
+    pub fn inten2(&mut self) -> INTEN2_W {
+        INTEN2_W { w: self }
     }
     #[doc = "Bit 3 - INTEN3"]
-    #[inline]
-    pub fn inten3(&mut self) -> _INTEN3W {
-        _INTEN3W { w: self }
+    #[inline(always)]
+    pub fn inten3(&mut self) -> INTEN3_W {
+        INTEN3_W { w: self }
     }
     #[doc = "Bit 4 - INTEN4"]
-    #[inline]
-    pub fn inten4(&mut self) -> _INTEN4W {
-        _INTEN4W { w: self }
+    #[inline(always)]
+    pub fn inten4(&mut self) -> INTEN4_W {
+        INTEN4_W { w: self }
     }
     #[doc = "Bit 5 - INTEN5"]
-    #[inline]
-    pub fn inten5(&mut self) -> _INTEN5W {
-        _INTEN5W { w: self }
+    #[inline(always)]
+    pub fn inten5(&mut self) -> INTEN5_W {
+        INTEN5_W { w: self }
     }
     #[doc = "Bit 6 - INTEN6"]
-    #[inline]
-    pub fn inten6(&mut self) -> _INTEN6W {
-        _INTEN6W { w: self }
+    #[inline(always)]
+    pub fn inten6(&mut self) -> INTEN6_W {
+        INTEN6_W { w: self }
     }
     #[doc = "Bit 7 - INTEN7"]
-    #[inline]
-    pub fn inten7(&mut self) -> _INTEN7W {
-        _INTEN7W { w: self }
+    #[inline(always)]
+    pub fn inten7(&mut self) -> INTEN7_W {
+        INTEN7_W { w: self }
     }
     #[doc = "Bit 8 - INTEN8"]
-    #[inline]
-    pub fn inten8(&mut self) -> _INTEN8W {
-        _INTEN8W { w: self }
+    #[inline(always)]
+    pub fn inten8(&mut self) -> INTEN8_W {
+        INTEN8_W { w: self }
     }
     #[doc = "Bit 9 - INTEN9"]
-    #[inline]
-    pub fn inten9(&mut self) -> _INTEN9W {
-        _INTEN9W { w: self }
+    #[inline(always)]
+    pub fn inten9(&mut self) -> INTEN9_W {
+        INTEN9_W { w: self }
     }
 }
